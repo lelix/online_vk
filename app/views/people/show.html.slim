@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Vk:
+  = @person.vk
+p
+  strong Name:
+  = @person.name
+
+-@takes.each do |take|
+	=take.created_at+2.hours
+	|&nbsp
+	=take.online
+	br
+
+= link_to 'Edit', edit_person_path(@person)
+'|
+= link_to 'Back', people_path
